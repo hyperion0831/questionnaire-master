@@ -1,0 +1,38 @@
+{
+    "properties":{
+       "id":{"type":"long"},
+       "name":{
+         "type":"text",
+         "analyzer":"ik_max_word",
+         "search_analyzer":"ik_smart"
+       },
+       "createDate":{
+          "type":"date",
+          "format":"yyyy/MM/dd HH:mm:ss"
+       },
+       "publishDate":{
+          "type":"date",
+          "format":"yyyy/MM/dd HH:mm:ss"
+       },
+       "authorId":{"type":"long"},
+       "authorName":{"type":"text"},
+       "typeId":{"type":"integer"},
+       "questionCount":{"type":"integer"},
+       "status":{"type":"integer"},
+       "questions":{
+          "type":"nested",
+          "properties":{
+             "id":{"type":"long"},
+             "templateId":{"type":"long"},
+             "questionTitle":{
+                "type":"text",
+                "analyzer":"ik_max_word",
+                "search_analyzer":"ik_smart"
+             },
+             "questionOrder":{"type":"integer"},
+             "questionNum":{"type":"integer"},
+             "inputPlaceholder":{"type":"text"}
+          }
+       }
+    }
+}
